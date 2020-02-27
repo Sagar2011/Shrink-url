@@ -2,10 +2,13 @@ package com.shrinkster.urlservice.controller;
 
 import com.shrinkster.urlservice.model.Url;
 import com.shrinkster.urlservice.model.UserCount;
+import com.shrinkster.urlservice.service.ScheduledTasks;
 import com.shrinkster.urlservice.service.UrlCountService;
 import com.shrinkster.urlservice.service.UrlService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
+import org.springframework.messaging.handler.annotation.MessageMapping;
+import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
@@ -13,14 +16,13 @@ import org.springframework.web.util.UriComponentsBuilder;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
 @RestController
 public class UrlController {
-
+    static int count = 0;
     @Autowired
     private UrlService urlService;
 
@@ -29,6 +31,9 @@ public class UrlController {
 
     @Autowired
     private UrlCountService urlCountService;
+
+    @Autowired
+    private ScheduledTasks scheduledTasks;
 
     @PostMapping("/generate")
     public ResponseEntity<?> postUrl(@RequestBody Url url, HttpServletRequest httpServletRequest){
@@ -45,6 +50,7 @@ public class UrlController {
             String link = urlService.postUrl(url);
             Set<String> linkSet = new HashSet<>();
             linkSet.add(link);
+//            scheduledTasks.fireGreeting();
             return new ResponseEntity<>(linkSet, HttpStatus.OK);
         }
         else{
@@ -81,5 +87,12 @@ public class UrlController {
         } else{
             return new ResponseEntity<>(HttpStatus.NOT_MODIFIED);
         }
+    }
+
+    //web socket for the graph purpose
+    @MessageMapping("/hello")
+    @SendTo("/topic/greetings")
+    public ResponseEntity<?> greeting(int message) throws Exception {
+        return new ResponseEntity<>(message,HttpStatus.OK);
     }
 }
