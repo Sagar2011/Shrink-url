@@ -1,0 +1,21 @@
+<div fxLayout="row" fxLayoutAlign="space-around center">
+    <div  class="example-card-div" fxFlex="70%" fxLayoutGap="20px">
+        <div *ngFor="let data of historyData">
+<mat-card class="example-card" [class.mat-elevation-z4]="isActive">
+         <div>
+            <mat-chip-list></mat-chip-list> 
+             <div fxLayout="row" fxLayoutAlign="start start"><div class="echip" fxFlex="7%" ><mat-chip color="primary" selected>Url:</mat-chip></div>
+             <div class="edata" fxFlex="90%">
+             <p> {{data.url}}</p>
+            </div>
+        </div>
+            <p> <mat-chip color="primary" selected>TinyUrl:</mat-chip> {{data.tinyUrl}}</p>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="space-between center">
+                <p> <mat-chip color="primary" selected>ExpiryDate:</mat-chip> {{data.expiryDate}} </p>
+            <button mat-fab color="accent">Vist</button>
+    </div>
+  </mat-card>
+</div>
+</div>
+</div>

@@ -13,6 +13,8 @@ import {CookieService} from 'ngx-cookie-service';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
+import { GraphComponent } from './graph/graph.component';
+import { HistoryComponent } from './history/history.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import {FlexLayoutModule} from '@angular/flex-layout';
     LinkDashboardComponent,
     AdminDashboardComponent,
     NavbarComponent,
-    HomePageComponent
+    HomePageComponent,
+    GraphComponent,
+    HistoryComponent
   ],
   imports: [
     BrowserModule,
