@@ -28,7 +28,9 @@
     "ngx-cookie-service": "^2.3.0",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
-    "zone.js": "~0.9.1"
+    "zone.js": "~0.9.1",
+    "sockjs-client": "^1.3.0",
+    "stompjs": "^2.3.3"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.803.23",

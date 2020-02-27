@@ -4,9 +4,14 @@ role="banner"
 fxLayout="row"
 fxLayoutAlign="space-between center">
     <mat-toolbar-row>
-        <span class="title" [routerLink]="['/']">Shrinkster</span>
+        <span class="title" [routerLink]="['/dashboard']">Shrinkster</span>
       <span class="example-spacer"></span>
-      <mat-icon *ngIf="show" class="example-icon" aria-hidden="false" aria-label="Example heart icon">notifications_active</mat-icon>
+      <button mat-icon-button [matMenuTriggerFor]="not" aria-label="Example icon-button with a menu" *ngIf="show">
+        <mat-icon [matBadge]="notifications" matBadgeColor="warn" class="example-icon" aria-hidden="false" aria-label="Example heart icon">notifications_active</mat-icon>
+      </button>
+      <mat-menu #not="matMenu">
+        <div>{{notifications}} is expired</div>
+      </mat-menu>
       <div fxLayout="row" fxLayoutAlign="end" *ngIf="show">
         <div fxShow.lt-sm="false" fxShow.gt-md="true" fxShow="true">
           <p style="padding-right: 15px; margin-top: 22px; font-size: 20px">
@@ -29,11 +34,11 @@ fxLayoutAlign="space-between center">
           <button
             mat-menu-item
             class="logoutButton"
-            [routerLink]="['/']"
+            [routerLink]="['/dashboard']"
             routerLinkActive="router-link-active"
             style="text-align: center;"
           >
-            <mat-icon>directions_car</mat-icon>Book
+            <mat-icon>insert_link</mat-icon>TinyUrl
           </button>
           <button
             mat-menu-item
@@ -42,7 +47,7 @@ fxLayoutAlign="space-between center">
             routerLinkActive="router-link-active"
             style="text-align: center;"
           >
-            <mat-icon>history</mat-icon>History
+            <mat-icon>attachment</mat-icon>Links history
           </button>
           <button
             mat-menu-item

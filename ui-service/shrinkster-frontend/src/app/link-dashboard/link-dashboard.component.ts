@@ -11,6 +11,7 @@ import { UrlService } from '../url.service';
 export class LinkDashboardComponent implements OnInit {
   urlGroup:FormGroup;
   tinyLink: any;
+  show = false;
   constructor(private url:UrlService,private router:Router, private fb:FormBuilder) { 
     this.urlGroup = this.fb.group({
       urlLink :new FormControl('', [
@@ -23,9 +24,10 @@ export class LinkDashboardComponent implements OnInit {
   }
 
   generate(){
-    console.log("::::"+ this.urlGroup.value);
     this.url.postUrl(this.urlGroup.value).subscribe((res)=>{
     this.tinyLink = res;
+    this.show=true;
+    this.urlGroup.reset();
     });
   }
 
