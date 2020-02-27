@@ -31,7 +31,7 @@ public class UrlController {
                 String.class);
         System.out.println(response.getStatusCode());
         String user = urlService.loadByUsername(httpServletRequest);
-        if(response.getStatusCode().compareTo(HttpStatus.OK)==200){
+        if(response.getStatusCode().value()==200){
             String link = urlService.postUrl(url);
             return new ResponseEntity<>(link, HttpStatus.OK);
         }
