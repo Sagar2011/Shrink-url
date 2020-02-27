@@ -1,6 +1,7 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from '../user.service';
+import { UrlService } from '../url.service';
 
 @Component({
   selector: 'app-navbar',
@@ -9,11 +10,13 @@ import { UserService } from '../user.service';
 })
 export class NavbarComponent implements OnInit {
   userProfileAvatarUrl: any;
-  constructor(private router:Router,private userService: UserService, private d:ChangeDetectorRef) { }
+  constructor(private router:Router,private userService: UserService, private d:ChangeDetectorRef, private url:UrlService) { }
   username: string;
   show = false;
   userProfile:any;
   userAvatar:any;
+  notifications: any;
+  interval: any;
   ngOnInit() {
     this.userService.getUserProfile().subscribe(response => {
       this.userProfile = response;
@@ -27,8 +30,19 @@ export class NavbarComponent implements OnInit {
       this.d.markForCheck();
     this.d.detectChanges();
     });
+    this.interval =  setInterval(() => {
+      this.checkUpdate();
+  }, 3600000);
     this.d.markForCheck();
     this.d.detectChanges();
+  }
+
+  checkUpdate(){
+    this.url.getStatus().subscribe((res)=>{
+      this.notifications = res;
+      this.d.markForCheck();
+      this.d.detectChanges();
+    });
   }
 //wfgetrhyjkjhghhgfds
 getUserProfile() {
@@ -50,5 +64,10 @@ logout() {
   });
 }
 
+ngOnDestroy() {
+  if (this.interval) {
+      clearInterval(this.interval);
+  }
+ }
 
 }

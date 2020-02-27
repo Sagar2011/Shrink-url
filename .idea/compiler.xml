@@ -6,11 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="discovery" />
-        <module name="userservice" />
         <module name="zuul" />
-        <module name="urlservice" />
+        <module name="userservice" />
         <module name="uiservice" />
+        <module name="discovery" />
+        <module name="urlservice" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

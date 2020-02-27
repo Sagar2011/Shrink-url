@@ -10,10 +10,11 @@ import { UrlService } from '../url.service';
 })
 export class LinkDashboardComponent implements OnInit {
   urlGroup:FormGroup;
-
+  tinyLink: any;
+  show = false;
   constructor(private url:UrlService,private router:Router, private fb:FormBuilder) { 
     this.urlGroup = this.fb.group({
-      url :new FormControl('', [
+      urlLink :new FormControl('', [
         Validators.required,
       ])
     })
@@ -23,7 +24,11 @@ export class LinkDashboardComponent implements OnInit {
   }
 
   generate(){
-    console.log('adadad'+ Object.values(this.urlGroup.value));
+    this.url.postUrl(this.urlGroup.value).subscribe((res)=>{
+    this.tinyLink = res;
+    this.show=true;
+    this.urlGroup.reset();
+    });
   }
 
 }

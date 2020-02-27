@@ -15,6 +15,9 @@ url='/url/findAllLinks'
 
   getUrl(): Observable<any> {
     return this.http.get<any>(this.url);
+  }
      
+  getStatus(): Observable<any>{
+    return this.http.get("/url/status");
   }
 }

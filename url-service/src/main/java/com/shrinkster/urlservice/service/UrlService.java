@@ -1,15 +1,19 @@
 package com.shrinkster.urlservice.service;
 
+import com.google.common.hash.Hashing;
 import com.shrinkster.urlservice.model.Url;
 import com.shrinkster.urlservice.repository.UrlRepository;
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.Jwts;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
+import java.nio.charset.Charset;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
@@ -19,6 +23,12 @@ public class UrlService {
 
     @Autowired
     private UrlRepository urlRepository;
+
+    @Autowired
+    private UrlCountService urlCountService;
+
+    @Value("${redirect-link}")
+    String redirectLink;
 
     // For getting the user profile using username from the database
     public String loadByUsername(HttpServletRequest request) {
@@ -42,19 +52,30 @@ public class UrlService {
         return null;
     }
 
-    public void postUrl(Url url){
+    public String postUrl(Url url){
+        System.out.println("in service id");
+        String id = Hashing.murmur3_32().hashString(url.getUrlLink(), Charset.defaultCharset()).toString();
+        System.out.println("id"+id);
+        url.setTinyUrl(id);
         url.setUrlId(UUID.randomUUID());
         url.setGenerateDate(new Date());
         urlRepository.save(url);
+        urlCountService.saveToCount(url.getUserId(),url.getUrlId());
+        String tinyUrl = redirectLink + url.getTinyUrl();
+        return tinyUrl;
     }
 
     public List<Url> getAllUrl(){
 
-        return (List<Url>)urlRepository.findAll();
+        List<Url> list = new ArrayList<Url>();
+        list = urlRepository.findAll();
+        return list;
     }
 
     public List<Url> getUserUrl(String user){
         return urlRepository.findByUserId(user);
     }
+
+    public Url getOriginalLink(String id) { return urlRepository.findByTinyUrl(id); }
 }
 

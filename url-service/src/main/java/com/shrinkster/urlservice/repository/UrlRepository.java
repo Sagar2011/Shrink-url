@@ -9,4 +9,5 @@ import java.util.List;
 @Repository
 public interface UrlRepository extends MongoRepository<Url, String> {
     List<Url> findByUserId(String userId);
+    Url findByTinyUrl(String tinyUrl);
 }
