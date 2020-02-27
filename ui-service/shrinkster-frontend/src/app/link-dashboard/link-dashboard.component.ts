@@ -10,7 +10,7 @@ import { UrlService } from '../url.service';
 })
 export class LinkDashboardComponent implements OnInit {
   urlGroup:FormGroup;
-  tinyLink: any;
+  tinyLink: any = 0;
   show = false;
   constructor(private url:UrlService,private router:Router, private fb:FormBuilder) { 
     this.urlGroup = this.fb.group({
