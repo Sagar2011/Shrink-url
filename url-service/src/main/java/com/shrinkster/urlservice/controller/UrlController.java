@@ -1,6 +1,8 @@
 package com.shrinkster.urlservice.controller;
 
 import com.shrinkster.urlservice.model.Url;
+import com.shrinkster.urlservice.model.UserCount;
+import com.shrinkster.urlservice.service.UrlCountService;
 import com.shrinkster.urlservice.service.UrlService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
@@ -11,6 +13,10 @@ import org.springframework.web.util.UriComponentsBuilder;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 @RestController
 public class UrlController {
@@ -20,6 +26,9 @@ public class UrlController {
 
     @Autowired
     private RestTemplate restTemplate;
+
+    @Autowired
+    private UrlCountService urlCountService;
 
     @PostMapping("/generate")
     public ResponseEntity<?> postUrl(@RequestBody Url url, HttpServletRequest httpServletRequest){
@@ -31,9 +40,12 @@ public class UrlController {
                 String.class);
         System.out.println(response.getStatusCode());
         String user = urlService.loadByUsername(httpServletRequest);
+        url.setUserId(user);
         if(response.getStatusCode().value()==200){
             String link = urlService.postUrl(url);
-            return new ResponseEntity<>(link, HttpStatus.OK);
+            Set<String> linkSet = new HashSet<>();
+            linkSet.add(link);
+            return new ResponseEntity<>(linkSet, HttpStatus.OK);
         }
         else{
             return new ResponseEntity<>("url is not valid", HttpStatus.NOT_ACCEPTABLE);
@@ -53,6 +65,21 @@ public class UrlController {
         } catch (IOException e) {
             e.printStackTrace();
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @GetMapping("/status")
+    public ResponseEntity<?> getNotification(HttpServletRequest request){
+        String user = urlService.loadByUsername(request);
+        List<UserCount> countLinks = urlCountService.getStatus(user);
+        List<Url> links = urlService.getUserUrl(user);
+        if(countLinks.size() != links.size()){
+            Set<Integer> linkSet = new HashSet<>();
+            linkSet.add(countLinks.size()-links.size());
+            urlCountService.deleteLinks(user);
+            return new ResponseEntity<>(linkSet, HttpStatus.OK);
+        } else{
+            return new ResponseEntity<>(HttpStatus.NOT_MODIFIED);
         }
     }
 }

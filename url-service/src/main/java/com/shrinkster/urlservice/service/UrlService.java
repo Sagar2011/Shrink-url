@@ -23,6 +23,9 @@ public class UrlService {
     @Autowired
     private UrlRepository urlRepository;
 
+    @Autowired
+    private UrlCountService urlCountService;
+
     @Value("${redirect-link}")
     String redirectLink;
 
@@ -56,6 +59,7 @@ public class UrlService {
         url.setUrlId(UUID.randomUUID());
         url.setGenerateDate(new Date());
         urlRepository.save(url);
+        urlCountService.saveToCount(url.getUserId(),url.getUrlId());
         String tinyUrl = redirectLink + url.getTinyUrl();
         return tinyUrl;
     }

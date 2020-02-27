@@ -12,4 +12,8 @@ export class UrlService {
   postUrl(data:any): Observable<any>{
     return this.http.post('/url/generate',data);
   }
+
+  getStatus(): Observable<any>{
+    return this.http.get("/url/status");
+  }
 }
