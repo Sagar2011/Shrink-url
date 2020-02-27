@@ -12,7 +12,9 @@ public class UrlServiceApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(UrlServiceApplication.class, args);
+
 	}
+
 	@Bean
 	public RestTemplate restTemplate(){
 		return new RestTemplate();

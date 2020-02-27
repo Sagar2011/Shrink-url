@@ -49,10 +49,12 @@ public class UrlService {
     }
 
     public List<Url> getAllUrl(){
-        return urlRepository.findAll();
+
+        return (List<Url>)urlRepository.findAll();
     }
 
     public List<Url> getUserUrl(String user){
         return urlRepository.findByUserId(user);
     }
 }
+
