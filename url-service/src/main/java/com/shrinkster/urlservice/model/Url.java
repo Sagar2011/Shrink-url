@@ -14,7 +14,7 @@ public class Url {
     private UUID urlId;
     private String urlLink;
     private String tinyUrl;
-    @Indexed(expireAfterSeconds = 50)
+    @Indexed(expireAfterSeconds = 172800)
     private Date generateDate;
     private String userId;
 
