@@ -4,13 +4,13 @@ import com.shrinkster.urlservice.model.Url;
 import com.shrinkster.urlservice.service.UrlService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 @RestController
 public class UrlController {
@@ -32,11 +32,27 @@ public class UrlController {
         System.out.println(response.getStatusCode());
         String user = urlService.loadByUsername(httpServletRequest);
         if(response.getStatusCode().compareTo(HttpStatus.OK)==200){
-            urlService.postUrl(url);
-            return new ResponseEntity<>("url is successfullly saved", HttpStatus.OK);
+            String link = urlService.postUrl(url);
+            return new ResponseEntity<>(link, HttpStatus.OK);
         }
         else{
             return new ResponseEntity<>("url is not valid", HttpStatus.NOT_ACCEPTABLE);
+        }
+    }
+
+    @GetMapping("/link/{id}")
+    public ResponseEntity<?> getUrl(@PathVariable String id, HttpServletResponse httpServletResponse) {
+        Url url = urlService.getOriginalLink(id);
+        try {
+            if(url != null){
+            httpServletResponse.sendRedirect(url.getUrlLink());
+            return new ResponseEntity<>(HttpStatus.OK);
+            } else {
+                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 }

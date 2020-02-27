@@ -1,8 +1,9 @@
     <mat-card class="card">
       <form [formGroup]="urlGroup">
         <mat-form-field class="example-full-width">
-          <input matInput formControlName="url" placeholder="url with http">
+          <input matInput formControlName="urlLink" placeholder="url with http">
         </mat-form-field>
       </form>
     </mat-card>
     <button mat-raised-button class="btn" (click)="generate()">Generate</button>
+<div class="btn">{{tinyLink}}</div>
