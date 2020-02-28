@@ -7,5 +7,5 @@
 
 FROM openjdk:8
 EXPOSE 9500
-COPY --from=build /target/ui-service.jar ui.jar
+COPY /target/ui-service.jar ui.jar
 ENTRYPOINT ["java","-jar","ui.jar"]

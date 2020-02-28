@@ -7,5 +7,5 @@
 
 FROM openjdk:8
 EXPOSE 8761
-COPY --from=build /target/discovery-server.jar discovery.jar
+COPY /target/discovery-server.jar discovery.jar
 ENTRYPOINT ["java","-jar","discovery.jar"]

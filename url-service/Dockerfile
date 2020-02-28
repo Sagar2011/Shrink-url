@@ -7,5 +7,5 @@
 
 FROM openjdk:8
 EXPOSE 9200
-COPY --from=build /target/url-service.jar url.jar
+COPY /target/url-service.jar url.jar
 ENTRYPOINT ["java","-jar","url.jar"]

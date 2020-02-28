@@ -7,5 +7,5 @@
 
 FROM openjdk:8
 EXPOSE 9000
-COPY --from=build /target/user-service.jar user.jar
+COPY /target/user-service.jar user.jar
 ENTRYPOINT ["java","-jar","user.jar"]

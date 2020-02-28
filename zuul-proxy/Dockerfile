@@ -7,5 +7,5 @@
 
 FROM openjdk:8
 EXPOSE 80
-COPY --from=build /target/zuul-proxy.jar zuul.jar
+COPY /target/zuul-proxy.jar zuul.jar
 ENTRYPOINT ["java","-jar","zuul.jar"]

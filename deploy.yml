@@ -4,7 +4,7 @@ Resources:
     Properties:
       InstanceType: m5ad.24xlarge
       ImageId: 'ami-0c28d7c6dd94fb3a7'
-      KeyName: 'aws-key'
+      KeyName: 'shrink-key'
       SecurityGroups:
         - !Ref AppNodeSG
       UserData: !Base64 |
