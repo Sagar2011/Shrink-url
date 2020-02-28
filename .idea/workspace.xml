@@ -2,60 +2,75 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a4dccc9d-b6d6-4a59-8aca-8f4d58ef72a1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_19_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-service/src/main/resources/static/main-es2015.32ba3c2225cc5dfbde19.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-service/src/main/resources/static/main-es2015.b063d02ed5a62f8bc262.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-service/src/main/resources/static/main-es2015.b88f9567317e7f29bb3a.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-service/src/main/resources/static/main-es5.32ba3c2225cc5dfbde19.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-service/src/main/resources/static/main-es5.b063d02ed5a62f8bc262.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-service/src/main/resources/static/main-es5.b88f9567317e7f29bb3a.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-service/src/main/resources/static/styles.b02d896626d2d23333ba.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-service/target/classes/static/main-es2015.32ba3c2225cc5dfbde19.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-service/target/classes/static/main-es2015.b063d02ed5a62f8bc262.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-service/target/classes/static/main-es2015.b88f9567317e7f29bb3a.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-service/target/classes/static/main-es5.32ba3c2225cc5dfbde19.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-service/target/classes/static/main-es5.b063d02ed5a62f8bc262.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-service/target/classes/static/main-es5.b88f9567317e7f29bb3a.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-service/target/classes/static/styles.b02d896626d2d23333ba.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/url-service/src/main/java/com/shrinkster/urlservice/model/UserCount.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/url-service/src/main/java/com/shrinkster/urlservice/repository/UserCountRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/url-service/src/main/java/com/shrinkster/urlservice/service/UrlCountService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/discovery-server/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-service/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-service/src/main/resources/static/assets/lib/canvasjs.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-service/src/main/resources/static/main-es2015.5567e580262f5d8dfed0.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-service/src/main/resources/static/main-es2015.61ff6ace923084cbcaa5.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-service/src/main/resources/static/main-es2015.66610a3fcadfa5a0e548.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-service/src/main/resources/static/main-es2015.c94432fb33c78e8310a5.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-service/src/main/resources/static/main-es2015.e82babac9dbea3f08f64.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-service/src/main/resources/static/main-es2015.fb9963c87d95af7e5921.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-service/src/main/resources/static/main-es5.5567e580262f5d8dfed0.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-service/src/main/resources/static/main-es5.61ff6ace923084cbcaa5.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-service/src/main/resources/static/main-es5.66610a3fcadfa5a0e548.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-service/src/main/resources/static/main-es5.c94432fb33c78e8310a5.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-service/src/main/resources/static/main-es5.e82babac9dbea3f08f64.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-service/src/main/resources/static/main-es5.fb9963c87d95af7e5921.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-service/src/main/resources/static/polyfills-es2015.f9ae1b77a590b035e59f.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-service/src/main/resources/static/polyfills-es5.528b367a33ef5b9270d8.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-service/target/classes/static/assets/lib/canvasjs.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-service/target/classes/static/main-es2015.5567e580262f5d8dfed0.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-service/target/classes/static/main-es2015.61ff6ace923084cbcaa5.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-service/target/classes/static/main-es2015.66610a3fcadfa5a0e548.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-service/target/classes/static/main-es2015.c94432fb33c78e8310a5.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-service/target/classes/static/main-es2015.e82babac9dbea3f08f64.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-service/target/classes/static/main-es2015.fb9963c87d95af7e5921.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-service/target/classes/static/main-es5.5567e580262f5d8dfed0.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-service/target/classes/static/main-es5.61ff6ace923084cbcaa5.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-service/target/classes/static/main-es5.66610a3fcadfa5a0e548.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-service/target/classes/static/main-es5.c94432fb33c78e8310a5.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-service/target/classes/static/main-es5.e82babac9dbea3f08f64.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-service/target/classes/static/main-es5.fb9963c87d95af7e5921.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-service/target/classes/static/polyfills-es2015.f9ae1b77a590b035e59f.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-service/target/classes/static/polyfills-es5.528b367a33ef5b9270d8.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/url-service/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/url-service/src/main/java/com/shrinkster/urlservice/model/TinyUrl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/zuul-proxy/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ui-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui-service/shrinkster-frontend/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/ui-service/shrinkster-frontend/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui-service/shrinkster-frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/ui-service/shrinkster-frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui-service/shrinkster-frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/ui-service/shrinkster-frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui-service/shrinkster-frontend/src/app/WebSocketAPI.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/ui-service/shrinkster-frontend/src/app/admin-dashboard/admin-dashboard.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/ui-service/shrinkster-frontend/src/app/admin-dashboard/admin-dashboard.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui-service/shrinkster-frontend/src/app/admin-dashboard/admin-dashboard.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ui-service/shrinkster-frontend/src/app/admin-dashboard/admin-dashboard.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui-service/shrinkster-frontend/src/app/graph/graph.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/ui-service/shrinkster-frontend/src/app/graph/graph.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui-service/shrinkster-frontend/src/app/graph/graph.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ui-service/shrinkster-frontend/src/app/graph/graph.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui-service/shrinkster-frontend/src/app/history/history.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/ui-service/shrinkster-frontend/src/app/history/history.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui-service/shrinkster-frontend/src/app/history/history.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ui-service/shrinkster-frontend/src/app/history/history.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui-service/shrinkster-frontend/src/app/home-page/home-page.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/ui-service/shrinkster-frontend/src/app/home-page/home-page.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui-service/shrinkster-frontend/src/app/home-page/home-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/ui-service/shrinkster-frontend/src/app/home-page/home-page.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui-service/shrinkster-frontend/src/app/home-page/home-page.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ui-service/shrinkster-frontend/src/app/home-page/home-page.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui-service/shrinkster-frontend/src/app/link-dashboard/link-dashboard.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/ui-service/shrinkster-frontend/src/app/link-dashboard/link-dashboard.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui-service/shrinkster-frontend/src/app/link-dashboard/link-dashboard.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ui-service/shrinkster-frontend/src/app/link-dashboard/link-dashboard.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui-service/shrinkster-frontend/src/app/navbar/navbar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/ui-service/shrinkster-frontend/src/app/navbar/navbar.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui-service/shrinkster-frontend/src/app/navbar/navbar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ui-service/shrinkster-frontend/src/app/navbar/navbar.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui-service/shrinkster-frontend/src/app/url.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ui-service/shrinkster-frontend/src/app/url.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui-service/shrinkster-frontend/src/app/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ui-service/shrinkster-frontend/src/app/user.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui-service/shrinkster-frontend/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/ui-service/shrinkster-frontend/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui-service/shrinkster-frontend/src/polyfills.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ui-service/shrinkster-frontend/src/polyfills.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui-service/src/main/resources/static/3rdpartylicenses.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ui-service/src/main/resources/static/3rdpartylicenses.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui-service/src/main/resources/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/ui-service/src/main/resources/static/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui-service/target/classes/static/3rdpartylicenses.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ui-service/target/classes/static/3rdpartylicenses.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui-service/target/classes/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/ui-service/target/classes/static/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui-service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/ui-service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui-service/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/ui-service/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui-service/target/surefire-reports/2020-02-27T17-17-56_207-jvmRun1.dump" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui-service/target/surefire-reports/TEST-com.shrinkster.uiservice.UiServiceApplicationTests.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui-service/target/surefire-reports/com.shrinkster.uiservice.UiServiceApplicationTests.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/ui-service/target/uiservice-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/ui-service/target/uiservice-0.0.1-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui-service/target/uiservice-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/ui-service/target/uiservice-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/url-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/url-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/url-service/src/main/java/com/shrinkster/urlservice/config/WebSocketConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/url-service/src/main/java/com/shrinkster/urlservice/config/WebSocketConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/url-service/src/main/java/com/shrinkster/urlservice/controller/UrlController.java" beforeDir="false" afterPath="$PROJECT_DIR$/url-service/src/main/java/com/shrinkster/urlservice/controller/UrlController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/url-service/src/main/java/com/shrinkster/urlservice/repository/UrlRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/url-service/src/main/java/com/shrinkster/urlservice/repository/UrlRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/url-service/src/main/java/com/shrinkster/urlservice/service/UrlService.java" beforeDir="false" afterPath="$PROJECT_DIR$/url-service/src/main/java/com/shrinkster/urlservice/service/UrlService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/url-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/url-service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/shrinkster/userservice/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/shrinkster/userservice/controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/shrinkster/userservice/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/shrinkster/userservice/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/shrinkster/userservice/service/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/shrinkster/userservice/service/IUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/shrinkster/userservice/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/shrinkster/userservice/service/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/url-service/src/main/java/com/shrinkster/urlservice/service/ScheduledTasks.java" beforeDir="false" afterPath="$PROJECT_DIR$/url-service/src/main/java/com/shrinkster/urlservice/service/ScheduledTasks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/url-service/src/main/java/com/shrinkster/urlservice/service/UrlCountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/url-service/src/main/java/com/shrinkster/urlservice/service/UrlCountService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/zuul-proxy/src/main/java/com/shrinkster/zuul/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/zuul-proxy/src/main/java/com/shrinkster/zuul/config/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/zuul-proxy/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/zuul-proxy/src/main/resources/application.properties" afterDir="false" />
     </list>
@@ -78,24 +93,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/url-service/src/main/java/com/shrinkster/urlservice/UrlServiceApplication.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" selection-start-line="14" selection-end-line="14" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#557#558#0" expanded="true" />
-                <element signature="e#589#590#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/url-service/src/main/java/com/shrinkster/urlservice/service/UrlService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="223">
-              <caret line="67" selection-start-line="67" selection-end-line="72" selection-end-column="5" />
+            <state relative-caret-position="291">
+              <caret line="71" column="20" selection-start-line="68" selection-end-line="71" selection-end-column="20" />
               <folding>
                 <element signature="e#2462#2463#0" expanded="true" />
                 <element signature="e#2517#2518#0" expanded="true" />
@@ -144,24 +145,6 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/user-service/src/main/java/com/shrinkster/userservice/UserServiceApplication.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-web/5.2.1.RELEASE/spring-security-web-5.2.1.RELEASE-sources.jar!/org/springframework/security/web/FilterChainProxy.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="333" column="27" selection-start-line="333" selection-start-column="27" selection-end-line="333" selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/user-service/src/main/java/com/shrinkster/userservice/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1054">
@@ -170,15 +153,48 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/user-service/src/main/java/com/shrinkster/userservice/controller/AuthController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="59">
+            <state relative-caret-position="362">
               <caret line="43" column="5" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
               <folding>
                 <element signature="e#1192#1193#0" expanded="true" />
                 <element signature="e#1237#1238#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/url-service/src/main/java/com/shrinkster/urlservice/controller/UrlController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="485">
+              <caret line="66" column="17" selection-start-line="66" selection-start-column="17" selection-end-line="66" selection-end-column="17" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/url-service/src/main/java/com/shrinkster/urlservice/service/UrlCountService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="351">
+              <caret line="45" column="53" selection-start-line="45" selection-start-column="10" selection-end-line="45" selection-end-column="53" />
+              <folding>
+                <element signature="e#1501#1512#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/url-service/src/main/java/com/shrinkster/urlservice/model/Url.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="13" column="1" lean-forward="true" selection-start-line="13" selection-start-column="1" selection-end-line="18" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -192,12 +208,13 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/url-service/src/main/java/com/shrinkster/urlservice/UrlServiceApplication.java" />
-        <option value="$PROJECT_DIR$/url-service/src/main/java/com/shrinkster/urlservice/controller/UrlController.java" />
         <option value="$PROJECT_DIR$/url-service/src/main/java/com/shrinkster/urlservice/service/UrlService.java" />
         <option value="$PROJECT_DIR$/user-service/src/main/java/com/shrinkster/userservice/service/IUserService.java" />
         <option value="$PROJECT_DIR$/user-service/src/main/java/com/shrinkster/userservice/service/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/user-service/src/main/java/com/shrinkster/userservice/controller/UserController.java" />
         <option value="$PROJECT_DIR$/user-service/src/main/java/com/shrinkster/userservice/controller/AuthController.java" />
+        <option value="$PROJECT_DIR$/url-service/src/main/java/com/shrinkster/urlservice/service/UrlCountService.java" />
+        <option value="$PROJECT_DIR$/url-service/src/main/java/com/shrinkster/urlservice/controller/UrlController.java" />
       </list>
     </option>
   </component>
@@ -444,6 +461,17 @@
             <path>
               <item name="shrinksterplatform" type="b2602c69:ProjectViewProjectNode" />
               <item name="Shrink-url" type="462c0819:PsiDirectoryNode" />
+              <item name="ui-service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="shrinksterplatform" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Shrink-url" type="462c0819:PsiDirectoryNode" />
+              <item name="ui-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="shrinksterplatform" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Shrink-url" type="462c0819:PsiDirectoryNode" />
               <item name="url-service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -484,81 +512,26 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="urlservice" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="shrinksterplatform" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Shrink-url" type="462c0819:PsiDirectoryNode" />
-              <item name="user-service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="shrinksterplatform" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Shrink-url" type="462c0819:PsiDirectoryNode" />
-              <item name="user-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="shrinksterplatform" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Shrink-url" type="462c0819:PsiDirectoryNode" />
-              <item name="user-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="shrinksterplatform" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Shrink-url" type="462c0819:PsiDirectoryNode" />
-              <item name="user-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="shrinksterplatform" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Shrink-url" type="462c0819:PsiDirectoryNode" />
-              <item name="user-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="userservice" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="shrinksterplatform" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Shrink-url" type="462c0819:PsiDirectoryNode" />
-              <item name="user-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="userservice" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="shrinksterplatform" type="b2602c69:ProjectViewProjectNode" />
               <item name="Shrink-url" type="462c0819:PsiDirectoryNode" />
-              <item name="user-service" type="462c0819:PsiDirectoryNode" />
+              <item name="url-service" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="userservice" type="462c0819:PsiDirectoryNode" />
+              <item name="urlservice" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="shrinksterplatform" type="b2602c69:ProjectViewProjectNode" />
               <item name="Shrink-url" type="462c0819:PsiDirectoryNode" />
-              <item name="user-service" type="462c0819:PsiDirectoryNode" />
+              <item name="url-service" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="userservice" type="462c0819:PsiDirectoryNode" />
-              <item name="repository" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="shrinksterplatform" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Shrink-url" type="462c0819:PsiDirectoryNode" />
-              <item name="user-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="userservice" type="462c0819:PsiDirectoryNode" />
+              <item name="urlservice" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -689,7 +662,7 @@
       <window_info anchor="bottom" id="Version Control" order="3" />
       <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Find" order="5" />
-      <window_info active="true" anchor="bottom" id="Run" order="6" visible="true" weight="0.68576103" />
+      <window_info active="true" anchor="bottom" id="Run" order="6" visible="true" weight="0.62193125" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
@@ -759,24 +732,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/url-service/src/main/java/com/shrinkster/urlservice/model/Url.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="10" lean-forward="true" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/url-service/src/main/java/com/shrinkster/urlservice/service/UrlCountService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -786,7 +745,7 @@
     <entry file="file://$PROJECT_DIR$/url-service/src/main/java/com/shrinkster/urlservice/UrlServiceApplication.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#557#558#0" expanded="true" />
@@ -795,33 +754,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/url-service/src/main/java/com/shrinkster/urlservice/service/UrlService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="67" selection-start-line="67" selection-end-line="72" selection-end-column="5" />
-          <folding>
-            <element signature="e#2462#2463#0" expanded="true" />
-            <element signature="e#2517#2518#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/user-service/src/main/java/com/shrinkster/userservice/UserServiceApplication.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/url-service/src/main/java/com/shrinkster/urlservice/controller/UrlController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="426">
-          <caret line="61" column="5" selection-start-line="59" selection-start-column="3" selection-end-line="61" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2380#2381#0" expanded="true" />
-            <element signature="e#2425#2426#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -886,12 +822,50 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/user-service/src/main/java/com/shrinkster/userservice/controller/AuthController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="59">
+        <state relative-caret-position="362">
           <caret line="43" column="5" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
           <folding>
             <element signature="e#1192#1193#0" expanded="true" />
             <element signature="e#1237#1238#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/url-service/src/main/java/com/shrinkster/urlservice/service/UrlService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="71" column="20" selection-start-line="68" selection-end-line="71" selection-end-column="20" />
+          <folding>
+            <element signature="e#2462#2463#0" expanded="true" />
+            <element signature="e#2517#2518#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/url-service/src/main/java/com/shrinkster/urlservice/service/UrlCountService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="45" column="53" selection-start-line="45" selection-start-column="10" selection-end-line="45" selection-end-column="53" />
+          <folding>
+            <element signature="e#1501#1512#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/url-service/src/main/java/com/shrinkster/urlservice/controller/UrlController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="485">
+          <caret line="66" column="17" selection-start-line="66" selection-start-column="17" selection-end-line="66" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/url-service/src/main/java/com/shrinkster/urlservice/model/Url.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="13" column="1" lean-forward="true" selection-start-line="13" selection-start-column="1" selection-end-line="18" selection-end-column="26" />
         </state>
       </provider>
     </entry>

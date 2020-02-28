@@ -1,5 +1,6 @@
 package com.shrinkster.urlservice.controller;
 
+import com.shrinkster.urlservice.model.TinyUrl;
 import com.shrinkster.urlservice.model.Url;
 import com.shrinkster.urlservice.model.UserCount;
 import com.shrinkster.urlservice.service.ScheduledTasks;
@@ -102,8 +103,8 @@ public class UrlController {
     //web socket for the graph purpose
     @MessageMapping("/hello")
     @SendTo("/topic/greetings")
-    public ResponseEntity<?> greeting(int message) throws Exception {
-        return new ResponseEntity<>(message,HttpStatus.OK);
+    public ResponseEntity<?> greeting(TinyUrl tinyUrl) throws Exception {
+        return new ResponseEntity<TinyUrl>(tinyUrl,HttpStatus.OK);
     }
 
     @GetMapping("/urls")
@@ -114,5 +115,10 @@ public class UrlController {
         }catch (Exception ex){
            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
     }
+    }
+
+    @GetMapping("/urlsCount/{userId}")
+    public List<UserCount> getUrlsCount(@PathVariable String userId, HttpServletResponse httpServletResponse){
+        return urlCountService.getUrlCount (userId);
     }
 }

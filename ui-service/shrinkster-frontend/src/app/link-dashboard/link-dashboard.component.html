@@ -5,8 +5,8 @@
         </mat-form-field>
       </form>
     </mat-card>
-    <button mat-raised-button class="primary" (click)="generate()">Generate</button>
+    <button mat-raised-button class="accent" (click)="generate()" class="btn">Generate</button>
 
 <mat-card class="card" *ngIf="show">
-  <div>Generated Tiny Url: {{tinyLink}}</div>
+  <div><b>Generated Tiny Url:</b> <i>{{tinyLink}}</i></div>
 </mat-card>

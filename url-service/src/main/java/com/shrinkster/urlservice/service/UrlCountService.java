@@ -6,6 +6,7 @@ import com.shrinkster.urlservice.repository.UserCountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -40,5 +41,12 @@ public class UrlCountService {
                 }
             }
         }
+    }
+
+    public List<UserCount> getUrlCount(String userId){
+
+        List<UserCount> list = new ArrayList<UserCount>();
+        list = userCountRepository.findAll();
+        return list;
     }
 }

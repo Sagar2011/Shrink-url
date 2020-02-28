@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginDialogBoxComponent } from '../login-dialog-box/login-dialog-box.component';
 import { MatDialog } from '@angular/material/dialog';
-import { WebSocketAPI } from '../WebSocketAPI';
 
 @Component({
   selector: 'app-home-page',
@@ -10,11 +9,7 @@ import { WebSocketAPI } from '../WebSocketAPI';
   styleUrls: ['./home-page.component.css']
 })
 export class HomePageComponent implements OnInit {
-  webSocketApi: WebSocketAPI;
-  greeting: any;
-  name: string;
   constructor(private router:Router, private dialog:MatDialog){}
-  // constructor(private router:Router, private dialog:MatDialog){}
   show() {
     if (document.cookie.length > 0) {
       this.router.navigate(["dashboard"]);
@@ -24,15 +19,7 @@ export class HomePageComponent implements OnInit {
         height: "250px"
       });
     }
-  }
-  ngOnInit() {
-    this.webSocketApi = new WebSocketAPI(new HomePageComponent(this.router,this.dialog));
-    this.webSocketApi._connect();
-    
-  }
+  } ngOnInit(){
 
-  handleMessage(message){
-    this.greeting = message;
   }
-
 }

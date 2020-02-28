@@ -1,20 +1,11 @@
-img{
+.container img {
     width: 100%;
-}
-/* .container {
-    position: relative;
-    width: 100%;
-    max-width: 400px;
-  }
-   */
-  .container img {
-    width: 100%;
-    height: auto;
+    height: 450px;
   }
   
   .container .btn {
     position: absolute;
-    top: 30%;
+    top: 25%;
     left: 50%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);

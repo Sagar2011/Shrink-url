@@ -20,4 +20,8 @@ url='/url/findAllLinks'
   getStatus(): Observable<any>{
     return this.http.get("/url/status");
   }
+
+  getUserHistory():Observable<any>{
+    return this.http.get("/url/urls");
+  }
 }

@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { UrlService } from '../url.service';
 export interface Url{
-  url:string,
+  urlLink:string,
   tinyUrl:string,
-  expiryDate:string
+  generateDate:string
 }
 @Component({
   selector: 'app-history',
@@ -12,27 +13,19 @@ export interface Url{
 
 export class HistoryComponent implements OnInit {
 
-  constructor() { }
+  constructor(private url:UrlService) { }
   isActive:boolean=true;
-  historyData:Url[]=[
-    { url : "https://www.hackerrank.com/challenges/java-date-and-time/problem?h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=",
-      tinyUrl:"https://www.geeksforgeeks.org/deletion-binary-tree/",
-      expiryDate: "12/12/2020"
-    },{ url : "https://www.hackerrank.com/challenges/java-date-and-time/problem?h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v",
-    tinyUrl:"https://www.geeksforgeeks.org/deletion-binary-tree/",
-    expiryDate: "12/12/2020"
-  },{ url : "https://www.hackerrank.com/challenges/java-date-and-time/problem?h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=z",
-  tinyUrl:"https://www.geeksforgeeks.org/deletion-binary-tree/",
-  expiryDate: "12/12/2020"
-  }
-  ];
-
+  historyData:Url[]=[];
+  show = false;
   ngOnInit() {
-    console.log('data',this.historyData);
-    this.historyData.forEach(element => {
-      console.log(element)
+    this.url.getUserHistory().subscribe((res)=>{
+      this.historyData = res;
+      if(this.historyData.length  !== 0){
+        this.show = true;
+      } else{
+        this.show = false;
+      }
     });
-
   }
 
 }
