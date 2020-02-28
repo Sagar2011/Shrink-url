@@ -6,6 +6,6 @@
 #
 
 FROM openjdk:8
-EXPOSE 80
+EXPOSE 8080
 COPY /target/zuul-proxy.jar zuul.jar
 ENTRYPOINT ["java","-jar","zuul.jar"]
