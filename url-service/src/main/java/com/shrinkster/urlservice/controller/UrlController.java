@@ -105,4 +105,14 @@ public class UrlController {
     public ResponseEntity<?> greeting(int message) throws Exception {
         return new ResponseEntity<>(message,HttpStatus.OK);
     }
+
+    @GetMapping("/urls")
+    public ResponseEntity<?> getUrls(HttpServletRequest request){
+       try{ String user = urlService.loadByUsername(request);
+        List<Url> links = urlService.getUserUrl(user);
+            return new ResponseEntity<>(links, HttpStatus.OK);
+        }catch (Exception ex){
+           return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+    }
 }

@@ -1,11 +1,10 @@
-import * as Stomp from 'stompjs';
 import * as SockJS from 'sockjs-client';
-import { AppComponent } from './app.component';
+import * as Stomp from 'stompjs';
 import { HomePageComponent } from './home-page/home-page.component';
 
 export class WebSocketAPI {
-    webSocketEndPoint: string = '/ws';
-    topic: string = "/topic/greetings";
+    webSocketEndPoint: string = '/url/ws';
+    topic: string = "/url/topic/greetings";
     stompClient: any;
     appComponent: HomePageComponent;
     constructor(appComponent: HomePageComponent){

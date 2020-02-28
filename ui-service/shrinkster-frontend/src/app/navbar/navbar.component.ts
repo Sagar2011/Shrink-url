@@ -63,7 +63,9 @@ logout() {
     this.show = false;
   });
 }
-
+notify(){
+  this.checkUpdate();
+}
 ngOnDestroy() {
   if (this.interval) {
       clearInterval(this.interval);

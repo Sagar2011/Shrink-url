@@ -27,6 +27,8 @@ export class HomePageComponent implements OnInit {
   }
   ngOnInit() {
     this.webSocketApi = new WebSocketAPI(new HomePageComponent(this.router,this.dialog));
+    this.webSocketApi._connect();
+    
   }
 
   handleMessage(message){
