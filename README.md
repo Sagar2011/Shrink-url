@@ -49,7 +49,7 @@ For Running the application follow this steps:
 
 
 # Live link location:
-- 
+- http://ec2-3-6-147-58.ap-south-1.compute.amazonaws.com:8080
 
 # Backlog
 1) Application is not responsive for mobile
