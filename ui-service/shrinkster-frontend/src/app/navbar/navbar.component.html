@@ -1,0 +1,63 @@
+<mat-toolbar color="primary"
+class="toolbar"
+role="banner"
+fxLayout="row"
+fxLayoutAlign="space-between center">
+    <mat-toolbar-row>
+        <span class="title" [routerLink]="['/dashboard']">Shrinkster</span>
+      <span class="example-spacer"></span>
+      <button mat-icon-button [matMenuTriggerFor]="not" aria-label="Example icon-button with a menu" *ngIf="show">
+        <mat-icon [matBadge]="notifications" matBadgeColor="warn" class="example-icon" aria-hidden="false" aria-label="Example heart icon">notifications_active</mat-icon>
+      </button>
+      <mat-menu #not="matMenu" (click)="notify()">
+        <div>{{notifications}} is expired</div>
+      </mat-menu>
+      <div fxLayout="row" fxLayoutAlign="end" *ngIf="show">
+        <div fxShow.lt-sm="false" fxShow.gt-md="true" fxShow="true">
+          <p style="padding-right: 15px; margin-top: 22px; font-size: 20px">
+            {{ username | titlecase }}
+          </p>
+        </div>
+        <button
+          mat-icon-button
+          [matMenuTriggerFor]="menu"
+          [ngStyle]="{
+            'background-image': userProfileAvatarUrl,
+            'background-size': 'cover',
+            'margin-top': '17px'
+          }"
+        >
+          <div mat-card-avatar></div>
+        </button>
+    
+        <mat-menu #menu="matMenu">
+          <button
+            mat-menu-item
+            class="logoutButton"
+            [routerLink]="['/dashboard']"
+            routerLinkActive="router-link-active"
+            style="text-align: center;"
+          >
+            <mat-icon>insert_link</mat-icon>TinyUrl
+          </button>
+          <button
+            mat-menu-item
+            class="logoutButton"
+            [routerLink]="['/history']"
+            routerLinkActive="router-link-active"
+            style="text-align: center;"
+          >
+            <mat-icon>attachment</mat-icon>Links history
+          </button>
+          <button
+            mat-menu-item
+            (click)="logout()"
+            routerLinkActive="active"
+            style="text-align: center;"
+          >
+            <mat-icon>power_settings_new</mat-icon>Logout
+          </button>
+        </mat-menu>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>

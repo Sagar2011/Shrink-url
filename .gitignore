@@ -1,0 +1,5 @@
+.idea/
+target/
+.project
+shrink-key.pem
+deploy.yml

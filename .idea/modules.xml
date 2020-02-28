@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Shrink-url.iml" filepath="$PROJECT_DIR$/.idea/Shrink-url.iml" />
+      <module fileurl="file://$PROJECT_DIR$/discovery-server/discovery.iml" filepath="$PROJECT_DIR$/discovery-server/discovery.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ui-service/uiservice.iml" filepath="$PROJECT_DIR$/ui-service/uiservice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/url-service/urlservice.iml" filepath="$PROJECT_DIR$/url-service/urlservice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/user-service/userservice.iml" filepath="$PROJECT_DIR$/user-service/userservice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zuul-proxy/zuul.iml" filepath="$PROJECT_DIR$/zuul-proxy/zuul.iml" />
+    </modules>
+  </component>
+</project>

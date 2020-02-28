@@ -1,0 +1,40 @@
+version: '3.7'
+services:
+  mongodb:
+    image: mongo
+    ports:
+        - "27017:27017"
+    environment: 
+      MONGO_INITDB_ROOT_USERNAME: admin 
+      MONGO_INITDB_ROOT_PASSWORD: adminUser123
+  discovery-server:
+    build: ./discovery-server
+    ports: 
+        - "8761:8761"
+  zuul-server:
+    build: ./zuul-proxy
+    ports: 
+        - "8080:8080"
+    depends_on:
+        - discovery-server
+  webapp-server:
+    build: ./ui-service
+    ports: 
+        - "9500:9500"
+    depends_on:
+        - discovery-server
+        - zuul-server
+  url-server:
+    build: ./url-service
+    ports: 
+        - "9200:9200"
+    depends_on:
+        - discovery-server
+        - zuul-server
+  user-server:
+    build: ./user-service
+    ports: 
+        - "9000:9000"
+    depends_on:
+        - discovery-server
+        - zuul-server

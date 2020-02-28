@@ -1,0 +1,33 @@
+<div fxLayout="row" fxLayoutAlign="space-around center">
+  <div class="example-card-div" fxFlex="70%" fxLayoutGap="20px" *ngIf="show">
+    <div *ngFor="let data of historyData">
+      <mat-card class="example-card" [class.mat-elevation-z4]="isActive">
+        <div>
+          <mat-chip-list></mat-chip-list>
+          <div fxLayout="row" fxLayoutAlign="start start">
+            <div class="echip" fxFlex="10%">
+              <mat-chip color="primary" selected>Url:</mat-chip>
+            </div>
+            <div class="edata" fxFlex="90%">
+              <p>{{ data.urlLink  | slice: 0:20}}</p>
+            </div>
+          </div>
+          <p>
+            <mat-chip color="primary" selected>TinyUrl:</mat-chip>
+            http://ec2-3-6-147-58.ap-south-1.compute.amazonaws.com:8080/url/link/{{ data.tinyUrl }}
+          </p>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="space-between center">
+          <p>
+            <mat-chip color="primary" selected>Generated Date:</mat-chip>
+            {{ data.generateDate | date: 'medium' }}
+          </p>
+          <button mat-fab color="accent" (click)="onNavigate(data.tinyUrl)">Vist</button>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+  <div class="example-card-div" fxFlex="70%" fxLayoutGap="20px" *ngIf="!show">
+      <p><i>there is no tinyUrl generated for the user</i> </p>
+  </div>
+</div>
