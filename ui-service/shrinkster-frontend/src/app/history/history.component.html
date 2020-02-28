@@ -9,7 +9,7 @@
               <mat-chip color="primary" selected>Url:</mat-chip>
             </div>
             <div class="edata" fxFlex="90%">
-              <p>{{ data.urlLink  | limitTo: 30}}</p>
+              <p>{{ data.urlLink  | slice: 0:20}}</p>
             </div>
           </div>
           <p>
