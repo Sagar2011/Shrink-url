@@ -1,6 +1,7 @@
 package com.shrinkster.userservice.service;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.Cookie;
@@ -68,6 +69,12 @@ public class UserServiceImpl implements IUserService {
         } else {
             return userRepo.findAll();
         }
+    }
+
+    public List<User> getUsers(){
+        List<User> list = new ArrayList<User>();
+        list = userRepo.findAll();
+        return list;
     }
 
 }

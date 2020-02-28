@@ -8,6 +8,10 @@ import com.shrinkster.urlservice.service.UrlCountService;
 import com.shrinkster.urlservice.service.UrlService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.web.bind.annotation.*;
@@ -15,6 +19,7 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.HashSet;
@@ -58,6 +63,11 @@ public class UrlController {
             return new ResponseEntity<>("url is not valid", HttpStatus.NOT_ACCEPTABLE);
         }
     }
+    @GetMapping("/findAllLinks")
+    public List<Url> getlink() {
+        return urlService.getAllUrl();
+    }
+
 
     @GetMapping("/link/{id}")
     public ResponseEntity<?> getUrl(@PathVariable String id, HttpServletResponse httpServletResponse) {
@@ -105,5 +115,10 @@ public class UrlController {
         }catch (Exception ex){
            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
     }
+    }
+
+    @GetMapping("/urlsCount/{userId}")
+    public List<UserCount> getUrlsCount(@PathVariable String userId, HttpServletResponse httpServletResponse){
+        return urlCountService.getUrlCount (userId);
     }
 }

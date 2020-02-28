@@ -6,13 +6,17 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class UrlService {
-
+url='/url/findAllLinks'
   constructor(private http:HttpClient) { }
 
   postUrl(data:any): Observable<any>{
     return this.http.post('/url/generate',data);
   }
 
+  getUrl(): Observable<any> {
+    return this.http.get<any>(this.url);
+  }
+     
   getStatus(): Observable<any>{
     return this.http.get("/url/status");
   }

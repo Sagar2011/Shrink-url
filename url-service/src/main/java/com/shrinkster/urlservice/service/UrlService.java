@@ -13,6 +13,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import java.nio.charset.Charset;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
@@ -65,7 +66,10 @@ public class UrlService {
     }
 
     public List<Url> getAllUrl(){
-        return urlRepository.findAll();
+
+        List<Url> list = new ArrayList<Url>();
+        list = urlRepository.findAll();
+        return list;
     }
 
     public List<Url> getUserUrl(String user){
@@ -76,3 +80,4 @@ public class UrlService {
 
 
 }
+

@@ -1,1 +1,43 @@
-<p>admin-dashboard works!</p>
+<div fxLayout="row" fxLayoutAlign="center center" class="card" >
+<mat-card fxLayout="row" fxLayoutAlign="center center" fxFlex="80">
+    <div fxFlex="80" fxLayoutAlign="center center">
+<mat-tab-group  >
+        <mat-tab label="Activate Links"  > 
+                <circle-progress
+                [percent]=progress
+                [radius]="100"
+                [units]=links
+                [outerStrokeWidth]="16"
+                [innerStrokeWidth]="8"
+                [outerStrokeColor]="'#78C000'"
+                [innerStrokeColor]="'#C7E596'"
+                [animation]="true"
+                [animationDuration]="300"
+                [subtitle]="title"
+              ></circle-progress>
+        </mat-tab>
+    <mat-tab label="Registered users"  >
+            <div fxFill="90" fxLayoutAlign="center center">
+           <mat-card  fxLayout="row" fxLayoutAlign="center center" class="list" fxFlex="70" *ngFor="let user of userBank">
+                <mat-card-header>
+            <div mat-card-avatar  [ngStyle]="{
+                'background-image': ' url(' + user.avatarURL + ')',
+                'background-size': 'cover',
+                'margin-top': '17px'
+              }"></div>
+           <mat-card-title>{{user.name}}</mat-card-title>
+           <mat-card-subtitle>{{user.urlCount}}</mat-card-subtitle>
+           </mat-card-header>
+           </mat-card>
+           
+            </div>
+            
+    </mat-tab>
+
+        
+    </mat-tab-group >
+</div>
+</mat-card>
+</div>
+
+    

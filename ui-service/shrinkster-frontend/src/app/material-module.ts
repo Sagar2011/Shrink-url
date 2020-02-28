@@ -41,7 +41,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatTreeModule} from '@angular/material/tree';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-
+import { NgCircleProgressModule } from 'ng-circle-progress';
+import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
   exports: [
@@ -89,7 +90,26 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     MatTreeModule,
     PortalModule,
     ScrollingModule,
-  ]
+    NgCircleProgressModule 
+  ],
+  imports: [
+   
+    BrowserModule,
+    // Specify ng-circle-progress as an import
+    NgCircleProgressModule.forRoot({
+      // set defaults here
+      radius: 100,
+      outerStrokeWidth: 16,
+      innerStrokeWidth: 8,
+      outerStrokeColor: "#78C000",
+      innerStrokeColor: "#C7E596",
+      animationDuration: 300,
+   
+    })
+ 
+  ],
+  providers: [],
+ 
 })
 export class DemoMaterialModule {}
 
