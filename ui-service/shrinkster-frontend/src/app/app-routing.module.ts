@@ -5,6 +5,8 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { HomePageComponent } from './home-page/home-page.component';
 import { GraphComponent } from './graph/graph.component';
 import { HistoryComponent } from './history/history.component';
+import { InternalErrorComponent } from './internal-error/internal-error.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 const routes: Routes = [
@@ -14,7 +16,9 @@ const routes: Routes = [
   },
   {path:'', component: HomePageComponent},
   {path:'graph', component: GraphComponent},
-  {path:'history', component: HistoryComponent}
+  {path:'history', component: HistoryComponent},
+  {path:'internal', component: InternalErrorComponent},
+  {path:'**', component: PageNotFoundComponent}
 ];
 
 @NgModule({

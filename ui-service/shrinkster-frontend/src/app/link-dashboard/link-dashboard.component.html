@@ -5,8 +5,10 @@
         </mat-form-field>
       </form>
     </mat-card>
-    <button mat-raised-button class="accent" (click)="generate()" class="btn">Generate</button>
-
+    <button mat-raised-button color="accent" (click)="generate()" class="btn">Generate</button>
+    <div class="center-page" *ngIf="spin">
+      <img class="spinner rotating" src="../../assets/images/spinner.jpeg">
+  </div>
 <mat-card class="card" *ngIf="show">
   <div><b>Generated Tiny Url:</b> <i>{{tinyLink}}</i></div>
 </mat-card>

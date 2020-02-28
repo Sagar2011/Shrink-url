@@ -15,6 +15,8 @@ import { HomePageComponent } from './home-page/home-page.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import { GraphComponent } from './graph/graph.component';
 import { HistoryComponent } from './history/history.component';
+import { InternalErrorComponent } from './internal-error/internal-error.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { HistoryComponent } from './history/history.component';
     NavbarComponent,
     HomePageComponent,
     GraphComponent,
-    HistoryComponent
+    HistoryComponent,
+    InternalErrorComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
