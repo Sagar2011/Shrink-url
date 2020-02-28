@@ -9,13 +9,13 @@ This is the repository for the instacar task round.
 For Running the application follow this steps:
 
 # Requirement:
-`1) Docker
+` 1) Docker
  2) jdk 1.8
  3) maven-3.6
  4) node-12
  5) angular-cli-8.3
  6) Web Sockets
- 
+ `
 # Run the application:
   - docker-compose up -f docker-compose-local -d --build
 
