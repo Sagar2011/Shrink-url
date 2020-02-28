@@ -22,7 +22,7 @@
             <mat-chip color="primary" selected>ExpiryDate:</mat-chip>
             {{ data.expiryDate }}
           </p>
-          <button mat-fab color="accent">Vist</button>
+          <button mat-fab color="accent" (click)="onNavigate(data.tinyUrl)">Vist</button>
         </div>
       </mat-card>
     </div>

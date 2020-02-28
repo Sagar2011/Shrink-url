@@ -25,7 +25,7 @@ export class GraphComponent implements OnInit {
 		axisX:{
 		  crosshair: {
 		  enabled: true,
-		  labelFormatter: e => { return "Hello"}
+		  labelFormatter: e => { return "Time Span"}
 		},
 		gridThickness: 0,
 		tickLength: 0,
@@ -35,7 +35,7 @@ export class GraphComponent implements OnInit {
 	  },axisY:{
 		crosshair: {
 		enabled: true,
-		labelFormatter: e => { return "Hello"}
+		labelFormatter: e => { return "links"}
 	  },
 	  minimum:-0.5,
 	  tickLength: 0,
@@ -68,6 +68,10 @@ export class GraphComponent implements OnInit {
 		chart.render();
       });
 	});
+	// setInterval(()=>{
+	// 	this.showGreeting(Math.floor(Math.random()*10));
+	// 	chart.render();
+	// },1000);
   }
   setConnected(connected: boolean) {
     this.disabled = !connected;
