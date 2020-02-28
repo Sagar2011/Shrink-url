@@ -100,25 +100,35 @@ public class UrlController {
         }
     }
 
-    //web socket for the graph purpose
-    @MessageMapping("/hello")
-    @SendTo("/topic/greetings")
-    public ResponseEntity<?> greeting(TinyUrl tinyUrl) throws Exception {
-        return new ResponseEntity<TinyUrl>(tinyUrl,HttpStatus.OK);
-    }
-
     @GetMapping("/urls")
     public ResponseEntity<?> getUrls(HttpServletRequest request){
-       try{ String user = urlService.loadByUsername(request);
-        List<Url> links = urlService.getUserUrl(user);
+        try{ String user = urlService.loadByUsername(request);
+            List<Url> links = urlService.getUserUrl(user);
             return new ResponseEntity<>(links, HttpStatus.OK);
         }catch (Exception ex){
-           return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
+
+    @GetMapping("/list")
+    public ResponseEntity<?> getUrl(@RequestParam String user){
+        try{
+//        String user = urlService.loadByUsername(request);
+            List<Url> links = urlService.getUserUrl(user);
+            return new ResponseEntity<>(links, HttpStatus.OK);
+        }catch (Exception ex){
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 
     @GetMapping("/urlsCount/{userId}")
     public List<UserCount> getUrlsCount(@PathVariable String userId, HttpServletResponse httpServletResponse){
         return urlCountService.getUrlCount (userId);
+    }
+    //web socket for the graph purpose
+    @MessageMapping("/hello")
+    @SendTo("/topic/greetings")
+    public ResponseEntity<?> greeting(TinyUrl tinyUrl) throws Exception {
+        return new ResponseEntity<TinyUrl>(tinyUrl,HttpStatus.OK);
     }
 }
