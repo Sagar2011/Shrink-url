@@ -31,7 +31,7 @@ export class HistoryComponent implements OnInit {
     });
   }
   onNavigate(link:any){
-    const url =link;
+    const url = "http://ec2-3-6-147-58.ap-south-1.compute.amazonaws.com:8080/url/link/"+link;
     window.open(url, '_blank');
 }
 }

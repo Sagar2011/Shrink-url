@@ -74,3 +74,7 @@ Resources:
         FromPort: '9200'
         ToPort: '9200'
         CidrIp: 0.0.0.0/0
+      - IpProtocol: tcp
+        FromPort: '8080'
+        ToPort: '8080'
+        CidrIp: 0.0.0.0/0

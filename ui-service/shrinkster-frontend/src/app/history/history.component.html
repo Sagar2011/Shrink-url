@@ -5,22 +5,22 @@
         <div>
           <mat-chip-list></mat-chip-list>
           <div fxLayout="row" fxLayoutAlign="start start">
-            <div class="echip" fxFlex="7%">
+            <div class="echip" fxFlex="10%">
               <mat-chip color="primary" selected>Url:</mat-chip>
             </div>
             <div class="edata" fxFlex="90%">
-              <p>{{ data.url }}</p>
+              <p>{{ data.urlLink  | limitTo: 30}}</p>
             </div>
           </div>
           <p>
             <mat-chip color="primary" selected>TinyUrl:</mat-chip>
-            {{ data.tinyUrl }}
+            http://ec2-3-6-147-58.ap-south-1.compute.amazonaws.com:8080/url/link/{{ data.tinyUrl }}
           </p>
         </div>
         <div fxLayout="row" fxLayoutAlign="space-between center">
           <p>
-            <mat-chip color="primary" selected>ExpiryDate:</mat-chip>
-            {{ data.expiryDate }}
+            <mat-chip color="primary" selected>Generated Date:</mat-chip>
+            {{ data.generateDate | date: 'medium' }}
           </p>
           <button mat-fab color="accent" (click)="onNavigate(data.tinyUrl)">Vist</button>
         </div>

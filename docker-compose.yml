@@ -1,0 +1,33 @@
+version: '3.7'
+services:
+  discovery-server:
+    image: saif789/shrink-discovery:latest
+    ports: 
+        - "8761:8761"
+  zuul-server:
+    image: saif789/shrink-zuul:latest
+    ports: 
+        - "8080:8080"
+    depends_on:
+        - discovery-server
+  webapp-server:
+    image: saif789/shrink-ui:latest
+    ports: 
+        - "9500:9500"
+    depends_on:
+        - discovery-server
+        - zuul-server
+  url-server:
+    image: saif789/shrink-url:latest
+    ports: 
+        - "9200:9200"
+    depends_on:
+        - discovery-server
+        - zuul-server
+  user-server:
+    image: saif789/shrink-user:latest
+    ports: 
+        - "9000:9000"
+    depends_on:
+        - discovery-server
+        - zuul-server

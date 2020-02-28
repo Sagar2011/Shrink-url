@@ -6,9 +6,19 @@
       </form>
     </mat-card>
     <button mat-raised-button color="accent" (click)="generate()" class="btn">Generate</button>
-    <div class="center-page" *ngIf="spin">
-      <img class="spinner rotating" src="../../assets/images/spinner.jpeg">
-  </div>
-<mat-card class="card" *ngIf="show">
-  <div><b>Generated Tiny Url:</b> <i>{{tinyLink}}</i></div>
-</mat-card>
+    <mat-card class="card" *ngIf="show">
+      <div><b>Generated Tiny Url:</b> <i>{{tinyLink}}</i></div>
+    </mat-card>
+  <div class="center-page" *ngIf="spin">
+    <div class="sk-cube-grid">
+        <div class="sk-cube sk-cube1"></div>
+        <div class="sk-cube sk-cube2"></div>
+        <div class="sk-cube sk-cube3"></div>
+        <div class="sk-cube sk-cube4"></div>
+        <div class="sk-cube sk-cube5"></div>
+        <div class="sk-cube sk-cube6"></div>
+        <div class="sk-cube sk-cube7"></div>
+        <div class="sk-cube sk-cube8"></div>
+        <div class="sk-cube sk-cube9"></div>
+    </div>
+</div>
