@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LoginDialogBoxComponent } from './login-dialog-box.component';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 
 describe('LoginDialogBoxComponent', () => {
   let component: LoginDialogBoxComponent;
@@ -8,7 +10,17 @@ describe('LoginDialogBoxComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LoginDialogBoxComponent ]
+      declarations: [ LoginDialogBoxComponent ],
+      imports: [
+        MatIconModule,
+        MatDialogModule
+      ],
+      providers: [
+        {
+          provide: MatDialogRef,
+          useValue: {}
+        }
+      ]
     })
     .compileComponents();
   }));

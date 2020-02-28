@@ -14,12 +14,18 @@ public class Url {
     private UUID urlId;
     private String urlLink;
     private String tinyUrl;
-    @Indexed(expireAfterSeconds = 172800)
+    @Indexed(expireAfterSeconds = 7200)
     private Date generateDate;
     private String userId;
 
     public Url(){
 
+    }
+
+    public Url(String urlLink,Date generateDate, String userId) {
+        this.urlLink = urlLink;
+        this.generateDate = generateDate;
+        this.userId = userId;
     }
 
     public String getUserId() {

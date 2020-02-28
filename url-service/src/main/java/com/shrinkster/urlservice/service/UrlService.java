@@ -66,7 +66,6 @@ public class UrlService {
     }
 
     public List<Url> getAllUrl(){
-
         List<Url> list = new ArrayList<Url>();
         list = urlRepository.findAll();
         return list;

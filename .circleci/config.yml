@@ -1,0 +1,71 @@
+# Java Maven CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-java/ for more details
+#
+version: 2
+jobs:
+  build-backend:
+    docker:
+      # specify the version you desire here
+      - image: circleci/openjdk:8-jdk
+    working_directory: ~/repo
+
+    environment:
+      # Customize the JVM maximum heap limit
+      MAVEN_OPTS: -Xmx3200m
+
+    steps:
+      - checkout
+
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "pom.xml" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
+
+      - run: mvn dependency:go-offline
+
+      - save_cache:
+          paths:
+            - ~/.m2
+          key: v1-dependencies-{{ checksum "pom.xml" }}
+
+      # run tests!
+      - run: mvn clean compile
+      - run: mvn test
+  build-frontend:
+    docker:
+      # specify the version you desire here
+      - image: circleci/node:latest-browsers
+
+    working_directory: ~/repo/ui-service/shrinkster-frontend
+
+    steps:
+      - checkout:
+          path: ~/repo
+
+      # Download and cache dependencies
+      #- run: cd angular && ls
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
+
+      - run: npm install
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+
+      # run tests!
+      - run: npm run test -- --watch=false --karma-config=karma.conf.js
+
+workflows:  
+  version: 2  
+  build_and_test:  
+    jobs:  
+      - build-backend  
+      - build-frontend

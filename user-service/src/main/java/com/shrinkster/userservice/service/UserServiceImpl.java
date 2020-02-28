@@ -36,6 +36,7 @@ public class UserServiceImpl implements IUserService {
     }
 
     // For getting the user profile using username from the database
+    @Override
     public User loadByUsername(HttpServletRequest request) {
         if (request.getCookies() != null) {
             for (Cookie cookie : request.getCookies()) {
@@ -57,12 +58,13 @@ public class UserServiceImpl implements IUserService {
         return null;
     }
 
-    // For getting user by user email id
+    @Override
     public User findByUserEmail(String email) {
         return userRepo.findByEmail(email);
     }
 
     // For getting all the client profile data from the database
+    @Override
     public List<User> findAllUsers() throws DatabaseEmptyException {
         if (userRepo.findAll().size() == 0) {
             throw new DatabaseEmptyException("Database is Empty");
@@ -71,6 +73,7 @@ public class UserServiceImpl implements IUserService {
         }
     }
 
+    @Override
     public List<User> getUsers(){
         List<User> list = new ArrayList<User>();
         list = userRepo.findAll();

@@ -57,7 +57,9 @@ export class GraphComponent implements OnInit {
 	  });
 	  chart.render();
 	  
-	const socket = new SockJS('/url/ws-graph');
+	const socket = new SockJS('/url/ws-graph', undefined,{'transports': ['websocket', 'xdr-streaming', 
+	'xhr-streaming', 'iframe-eventsource', 'iframe-htmlfile', 'xdr-polling', 'xhr-polling', 'iframe-xhr-polling', 'jsonp-polling']
+  });
     this.stompClient = Stomp.over(socket);
  
     const _this = this;
@@ -89,13 +91,12 @@ export class GraphComponent implements OnInit {
 	  if (this.datapoints.length > 20) {
 		this.datapoints.shift();
 	  }
-	  console.log('dad'+this.datapoints);
+	  console.log('dad'+Object.values(this.datapoints));
   }
  disconnect() {
     if (this.stompClient != null) {
       this.stompClient.disconnect();
     }
- 
     this.setConnected(false);
     console.log('Disconnected!');
   }

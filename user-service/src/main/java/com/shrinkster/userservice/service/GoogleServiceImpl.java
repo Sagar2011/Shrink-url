@@ -55,6 +55,7 @@ public class GoogleServiceImpl implements IGoogleService {
             userRepo.save(user);
         } else {
             logger.error("User Already exists with Email " + user.getEmail());
+            throw new DuplicateKeyException("User Already exists with Email");
         }
     }
 
