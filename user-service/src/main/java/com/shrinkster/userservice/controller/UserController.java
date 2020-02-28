@@ -78,7 +78,7 @@ public class UserController {
         RedirectView redirectview = new RedirectView();
         String role;
         try {
-            role = Jwts.parser().setSigningKey("$hr!nk$ter").parseClaimsJws(cookie.getValue()).getBody()
+            role = Jwts.parser().setSigningKey("$hr!nk$ter").parseClaimsJws(jwtToken).getBody()
                     .get("roles", String.class);
             if(role.equals("USER")){
             redirectview.setUrl(clientdashboardredirectUrl);}
