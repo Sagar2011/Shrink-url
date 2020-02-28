@@ -58,23 +58,15 @@ export class AdminDashboardComponent implements OnInit {
   }
   ngOnInit() {
     const _this = this;
-      setTimeout(function(){
         _this.getUsers();
-        this.cd.markForCheck();
-        this.cd.detectChanges();
-      },5000);
-      setTimeout(function(){
+        _this.cd.detectChanges();
+      _this.cd.markForCheck();
         _this.getLinks();
-        this.cd.markForCheck();
-        this.cd.detectChanges();
-      },10000);
-      setTimeout(function(){
+        _this.cd.markForCheck();
+        _this.cd.detectChanges();
         _this.getUrlCount();
-        this.cd.markForCheck();
-        this.cd.detectChanges();
-      },20000);
-      this.cd.markForCheck();
-        this.cd.detectChanges();
+        _this.cd.markForCheck();
+        _this.cd.detectChanges();
   }
 
 

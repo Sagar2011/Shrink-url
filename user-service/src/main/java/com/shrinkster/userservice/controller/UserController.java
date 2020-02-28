@@ -1,6 +1,7 @@
 package com.shrinkster.userservice.controller;
 
 import java.io.IOException;
+import java.time.LocalDateTime;
 import java.util.List;
 
 import javax.servlet.http.Cookie;
@@ -14,6 +15,8 @@ import com.shrinkster.userservice.service.IGoogleService;
 import com.shrinkster.userservice.service.IUserService;
 import com.shrinkster.userservice.util.CookieUtil;
 import com.shrinkster.userservice.util.JwtUtil;
+import io.jsonwebtoken.ExpiredJwtException;
+import io.jsonwebtoken.Jwts;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -38,6 +41,9 @@ public class UserController {
 
     @Value("${bookup.client.redirectUrl}")
     String clientdashboardredirectUrl;
+
+    @Value("${bookup.admin.redirecturl}")
+    String admindashboardredirectUrl;
 
     @Value("${Domain}")
     String domain;
@@ -70,7 +76,18 @@ public class UserController {
         String jwtToken = JwtUtil.addToken(httpServletResponse, user);
         Cookie cookie = CookieUtil.create(httpServletResponse, jwtTokenCookieName, jwtToken, false, -1, domain);
         RedirectView redirectview = new RedirectView();
-        redirectview.setUrl(clientdashboardredirectUrl);
+        String role;
+        try {
+            role = Jwts.parser().setSigningKey("$hr!nk$ter").parseClaimsJws(cookie.getValue()).getBody()
+                    .get("roles", String.class);
+            if(role.equals("USER")){
+            redirectview.setUrl(clientdashboardredirectUrl);}
+            else{
+                redirectview.setUrl(admindashboardredirectUrl);
+            }
+        } catch (ExpiredJwtException exception) {
+            return null;
+        }
         return redirectview;
     }
 

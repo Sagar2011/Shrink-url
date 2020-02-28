@@ -89,6 +89,7 @@ export class GraphComponent implements OnInit {
 	  if (this.datapoints.length > 20) {
 		this.datapoints.shift();
 	  }
+	  console.log('dad'+this.datapoints);
   }
  disconnect() {
     if (this.stompClient != null) {
