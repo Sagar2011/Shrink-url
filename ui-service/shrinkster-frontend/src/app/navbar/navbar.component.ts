@@ -15,7 +15,7 @@ export class NavbarComponent implements OnInit {
   show = false;
   userProfile:any;
   userAvatar:any;
-  notifications: any;
+  notifications = 0;
   interval: any;
   ngOnInit() {
     this.userService.getUserProfile().subscribe(response => {
@@ -33,6 +33,7 @@ export class NavbarComponent implements OnInit {
     this.interval =  setInterval(() => {
       this.checkUpdate();
   }, 3600000);
+  this.checkUpdate();
     this.d.markForCheck();
     this.d.detectChanges();
   }

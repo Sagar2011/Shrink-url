@@ -1,16 +1,12 @@
 package com.shrinkster.userservice.controller;
 
 import java.io.IOException;
-import java.time.LocalDateTime;
-import java.util.List;
-
 import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.shrinkster.userservice.exception.DatabaseEmptyException;
 import com.shrinkster.userservice.exception.UserNotFoundException;
 import com.shrinkster.userservice.model.User;
+import com.shrinkster.userservice.service.GithubServiceImpl;
 import com.shrinkster.userservice.service.IGoogleService;
 import com.shrinkster.userservice.service.IUserService;
 import com.shrinkster.userservice.util.CookieUtil;
@@ -48,6 +44,18 @@ public class UserController {
     @Value("${Domain}")
     String domain;
 
+    @Value("${github.auth}")
+    private String gitbaseUrl;
+
+    @Value("${github.clientId}")
+    String gitclientId;
+
+    @Value("${github.clientSecret}")
+    String gitclientSecret;
+
+    @Value("${github.accessTokenUrl}")
+    private String gitaccesToken;
+
     @Autowired
     private IUserService userService;
 
@@ -56,6 +64,9 @@ public class UserController {
 
     @Autowired
     private User user;
+
+    @Autowired
+    private GithubServiceImpl githubService;
 
     private static final String jwtTokenCookieName = "Shrink_bun";
 
@@ -97,4 +108,35 @@ public class UserController {
         String cookiename = jwtTokenCookieName;
         CookieUtil.clearCookie(response, cookiename);
     }
+
+    @GetMapping("/github")
+    public RedirectView githubLogin() {
+        RedirectView redirectView = new RedirectView();
+        String url = gitbaseUrl + "?client_id=" + this.gitclientId ;
+        redirectView.setUrl(url);
+        return redirectView;
+    }
+
+    @GetMapping("/github/login")
+    public RedirectView getGitDetails(@RequestParam("code") String code, HttpServletResponse httpServletResponse){
+        String accessToken = githubService.getOAuthAccessToken(code);
+        user = githubService.getUserInfo(accessToken);
+        String jwtToken = JwtUtil.addToken(httpServletResponse, user);
+        Cookie cookie = CookieUtil.create(httpServletResponse, jwtTokenCookieName, jwtToken, false, -1, domain);
+        RedirectView redirectview = new RedirectView();
+        String role;
+        try {
+            role = Jwts.parser().setSigningKey("$hr!nk$ter").parseClaimsJws(jwtToken).getBody()
+                    .get("roles", String.class);
+            if(role.equals("USER")){
+                redirectview.setUrl(clientdashboardredirectUrl);}
+            else{
+                redirectview.setUrl(admindashboardredirectUrl);
+            }
+        } catch (ExpiredJwtException exception) {
+            return null;
+        }
+        return redirectview;
+    }
+
 }
